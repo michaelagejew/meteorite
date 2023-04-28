@@ -59,8 +59,7 @@ my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
      #         xlabel='Number of landings recorded by NASA',
       #        ylabel='Mass of Meteorite',
        #       figsize=(12, 4))
-
-       st.title("Masses of Meteorites")
+st.title("Masses of Meteorites")
         chart = alt.Chart(df2).mark_bar().encode(
  y = 'bin',
  x= 'count'
