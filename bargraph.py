@@ -28,4 +28,4 @@ chart = alt.Chart(df2).mark_bar().encode(
  y = 'mass (g)',
  x= 'count'
 )
-st.altair_chart(bar_chart, use_container_width = True)
+st.altair_chart(chart, use_container_width = True)
