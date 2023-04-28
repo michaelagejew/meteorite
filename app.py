@@ -10,6 +10,7 @@ recclasses = list(df['recclass'].unique())
 st.title("Exploring Meteorite Mass and Year by Recclass and Fall Type")
 
 st.write("This is a line chart displaying the relationship between the mass and year of meteorites, grouped by their recclass and fall type. Users can filter the data by selecting one or more recclass(es) and/or a fall type ('fell' or 'found') and a range of years. ")
+st.write("This graph shows off the correlation between years and the mass of meteors, is there any years where the mass of meteors that have fallen is extremely high?")
 
 recclass_select = st.multiselect("Select 'Recclass(es):'", recclasses, default=['L6'])
 fall_or_found = st.multiselect("Select 'Fell' or 'Found':", ['', 'Fell', 'Found'])
@@ -62,6 +63,7 @@ my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
 #              figsize=(12, 4))
 st.title("Masses of Meteorites")
 st.write("This is a bar graph grouping together the mass of all meteorites that have falling, and sorting by ranges of minimum to 10x minimum capping out at 1 million.")
+st.write("This graph is important because it gives us a rough size of the meteorites that have fallen, and allows us to view if people should be worried about the size.")
 chart = alt.Chart(df2).mark_bar().encode(
  y = 'bin',
  x= 'count'
@@ -86,6 +88,7 @@ ch_country = alt.Chart(source).mark_geoshape(
 
 st.title("Locations of Meteorites")
 st.write("This is a map of all locations of meteorites and where they fell based off of the longitude and latitude of fall location. ")
+st.write("This map answers the question of where meteorites are more likely and less likely to fall, showing where areas might need more meteorite protection.")
 points = alt.Chart(df).mark_circle().encode(
     longitude='reclong:Q',
     latitude='reclat:Q',
