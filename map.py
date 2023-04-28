@@ -4,7 +4,6 @@ import numpy as np
 import streamlit as st
 df = pd.read_csv('Meteorite_Landings.csv')
 alt.data_transformers.disable_max_rows()
-df
 url = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-continents.json"
 source = alt.topo_feature(url, "continent")
 
