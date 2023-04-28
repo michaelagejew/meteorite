@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import numpy as np
-import matplotlib as mat
 
 df = pd.read_csv('Meteorite_Landings.csv', parse_dates=['year'])
 
@@ -53,20 +52,20 @@ df2 = df.groupby(['bin'])['bin'].count().reset_index(name="count")
 my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
 
 # print horizontal bar chart (using colors above)
-df2.plot.barh(x='bin', 
-              y='count', 
-              stacked=True, 
-              color=my_colors, 
-              title='Meteorite Landings by Mass (g)', 
-              xlabel='Number of landings recorded by NASA',
-              ylabel='Mass of Meteorite',
-              figsize=(12, 4))
-#st.title("Masses of Meteorites")
-#chart = alt.Chart(df2).mark_bar().encode(
- #y = 'bin',
- #x= 'count'
-#)
-#st.altair_chart(chart, use_container_width = True)
+#df2.plot.barh(x='bin', 
+#              y='count', 
+#             stacked=True, 
+#              color=my_colors, 
+#              title='Meteorite Landings by Mass (g)', 
+#              xlabel='Number of landings recorded by NASA',
+#              ylabel='Mass of Meteorite',
+#              figsize=(12, 4))
+st.title("Masses of Meteorites")
+chart = alt.Chart(df2).mark_bar().encode(
+ y = 'bin',
+ x= 'count'
+)
+st.altair_chart(chart, use_container_width = True)
 
 
 df = pd.read_csv('Meteorite_Landings.csv')
@@ -84,6 +83,7 @@ ch_country = alt.Chart(source).mark_geoshape(
     height=500
 )
 
+st.title("Locations of Meteorites")
 points = alt.Chart(df).mark_circle().encode(
     longitude='reclong:Q',
     latitude='reclat:Q',
