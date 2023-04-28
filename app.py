@@ -42,7 +42,7 @@ chart = alt.Chart(filtered_df).mark_line().encode(
 st.altair_chart(chart, use_container_width=True)
 
 
-df['bin'] = pd.cut(df['mass (g)'], bins=[0, 1, 5, 10, 50, 100, 500, 1000, 10000, 100000, 1000000, 1000000000])
+df['bin'] = pd.cut(df['mass (g)'], bins=[0, 1, 10, 100, 1000, 10000, 100000, 1000000, 1000000000])
 
 #group the pieces together by count
 df2 = df.groupby(['bin'])['bin'].count().reset_index(name="count")
