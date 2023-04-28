@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import streamlit as st
 
 pd.read_csv('Meteorite_Landings.csv')
 df = pd.read_csv("Meteorite_Landings.csv", usecols = ['mass (g)','name'])
