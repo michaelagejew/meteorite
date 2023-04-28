@@ -61,6 +61,7 @@ my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
 #              ylabel='Mass of Meteorite',
 #              figsize=(12, 4))
 st.title("Masses of Meteorites")
+st.write("This is a bar graph grouping together the mass of all meteorites that have falling, and sorting by ranges of minimum to 10x minimum capping out at 1 million.")
 chart = alt.Chart(df2).mark_bar().encode(
  y = 'bin',
  x= 'count'
@@ -84,6 +85,7 @@ ch_country = alt.Chart(source).mark_geoshape(
 )
 
 st.title("Locations of Meteorites")
+st.write("This is a map of all locations of meteorites and where they fell based off of the longitude and latitude of fall location. ")
 points = alt.Chart(df).mark_circle().encode(
     longitude='reclong:Q',
     latitude='reclat:Q',
