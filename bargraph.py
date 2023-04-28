@@ -25,7 +25,7 @@ my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
       #        ylabel='Mass of Meteorite',
        #       figsize=(12, 4))
 chart = alt.Chart(df2).mark_bar().encode(
- y = 'mass (g)',
+ y = 'bin',
  x= 'count'
 )
 st.altair_chart(chart, use_container_width = True)
