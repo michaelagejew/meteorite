@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-pd.read_csv('/content/Meteorite_Landings.csv')
+pd.read_csv('Meteorite_Landings.csv')
 df = pd.read_csv("Meteorite_Landings.csv", usecols = ['mass (g)','name'])
 
 #use pd.cut to separate data into groups using mass
