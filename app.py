@@ -51,7 +51,7 @@ df2 = df.groupby(['bin'])['bin'].count().reset_index(name="count")
 # pretty colors
 my_colors = [(x/10.0, x/20.0, 0.75) for x in range(len(df))]
 
-print horizontal bar chart (using colors above)
+# print horizontal bar chart (using colors above)
 df2.plot.barh(x='bin', 
               y='count', 
               stacked=True, 
