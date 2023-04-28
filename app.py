@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import numpy as np
+import matplotlib as mat
 
 df = pd.read_csv('Meteorite_Landings.csv', parse_dates=['year'])
 
